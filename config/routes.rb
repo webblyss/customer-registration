@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+
   root 'home#index'
+
+
+  get 'accounts/register',to: 'accounts#register', as: 'register'
+  get 'accounts/login',to: 'accounts#login', as: 'login'
+
+
   get '/customer', to: 'home#customer', as: 'customer'
   get '/about', to: 'home#about', as: 'about'
   
