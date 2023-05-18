@@ -1,0 +1,34 @@
+<%= render 'shared/navbar' %>
+
+
+<div class ="container mt-5">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Job</th>
+      <th scope="col">Email</th>
+       <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.firstname %></td>
+        <td><%= customer.lastname %></td>
+         <td><%= customer.job %></td>
+          <td><%= customer.email %></td>
+          <td><%= link_to 'delete', customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+
+
+
+
+
